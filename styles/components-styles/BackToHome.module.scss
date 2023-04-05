@@ -1,0 +1,13 @@
+@import '../global.scss';
+
+.BackToHome {
+    background: #fff;
+    padding:10px 20px;
+    border:1px solid #ddd;
+    border-radius: 4px;
+    color:$button-color;
+    cursor: pointer;
+    &:hover{
+        background:$button_hover_color;
+    }
+}

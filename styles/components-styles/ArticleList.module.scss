@@ -1,0 +1,32 @@
+@import '../global.scss';
+
+.container{
+    background: #fff;
+    .listItem{
+        padding:0.5rem;
+        color:#888;
+        border-radius: 1rem;
+        &:hover{
+            background:$themeColorHover;
+            border-left:4px solid $themeColor;
+            border-right:4px solid $themeColor;
+        }
+        &:not(:last-child){
+            border-bottom: 1px solid #e2e3e4;
+        }
+        .listHeader{
+            font-size:1rem;
+            .blank{
+                margin:0 0.4rem;
+            }
+        }
+        .title{
+            font-size:1.5rem;
+            color:black;
+            display: inline-block;
+            &:hover{
+                color:$themeColor;
+            }
+        }
+    }
+}
