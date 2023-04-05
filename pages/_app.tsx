@@ -4,7 +4,13 @@ import { MDXProvider } from '@mdx-js/react/lib';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 
-const articleNameArr:string[] = ['first.mdx','second.mdx','third.mdx'];
+
+//const articleNameArr:string[] = ['first.mdx','second.mdx','third.mdx'];
+
+
+//pages/posts에 mdx파일들을 동적으로 articleNameArr 추가
+const articleNameArr:string[] = 
+  preval `module.exports = require('fs').readdirSync("./pages/posts")` || [];
 
 //문장 내용
 const articles:article[] = articleNameArr.map(
@@ -12,9 +18,11 @@ const articles:article[] = articleNameArr.map(
     const{
       meta:{title,author,tag,description,createTime}
     } = require("./posts/" + name);
-    return{title,author,tag,description,createTime,path:name.split('.')[0]}  
+    return{title,author,tag,description,createTime,path:name.split('.')[0]};  
   }
-);
+).sort((a,b)=>Date.parse(a.createTime) - Date.parse(b.createTime));
+
+
 
 export default function App({ Component, pageProps,router }: AppProps) {
   return (
