@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styles from '@/styles/components-styles/ArticleList.module.scss';
-export default function ArticleList({list}:any){
-
+export default function ArticleList({tag='All',list}:any){
+    const renderList =  tag==='All'? list : list.filter((article:article)=>article.tag.includes(tag))
 
     return(
         <div className={styles.container}>
         {
-            list.map((article:article,index:number)=>(
+            renderList.map((article:article,index:number)=>(
                 <div className={styles.listItem} key={index.toString()}>
                     <div className={styles.listHeader}>
                         <span>{article.createTime}</span>

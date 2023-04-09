@@ -22,7 +22,7 @@ const articles:article[] = articleNameArr.map(
   }
 ).sort((a,b)=>Date.parse(a.createTime) - Date.parse(b.createTime));
 
-
+console.log(articles);
 
 export default function App({ Component, pageProps,router }: AppProps) {
   return (

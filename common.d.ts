@@ -6,3 +6,5 @@ interface article{
     createTime:string,
     path:string,
 }
+
+

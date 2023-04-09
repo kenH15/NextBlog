@@ -108,7 +108,20 @@
         align-items: center;
         flex-direction: column;
         color: black;
-
+        .tagCard{
+            width: 100%;
+            padding:10px;
+            .tagNum{
+                margin-left: 0.3rem;
+            }
+            .label{
+                text-align: center;
+                margin-top: 0.2rem;
+                &:hover{
+                    color:$themeColor;
+                }
+            }
+        }
     }
 }
 
@@ -123,6 +136,7 @@
     border-radius: 8px;
     box-shadow: 6px 6px 20px 6px rgba(0,0,0,0.1);
     border-left:4px solid $themeColor;
+    overflow-y: auto;
     .content {
         margin-bottom: 48px;
       }

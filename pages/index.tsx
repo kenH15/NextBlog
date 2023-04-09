@@ -7,14 +7,12 @@ import Link from 'next/link';
 import ArticleList from '@/components/AriticleList';
 
 
-export default function Home({articles}:any) {
-  console.log("index",articles);
-  console.log(typeof(articles));
+export default function Home({router,articles}:any) {
+  console.log("index",router);
   return (
     <>
-
       <main className={styles.main}>
-        <ArticleList list={articles}/>
+        <ArticleList tag = {router.query.tag} list={articles}/>
       </main>
     </>
   );
